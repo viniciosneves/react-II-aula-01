@@ -6,8 +6,9 @@ import LivrosDestaque from "./componentes/LivrosDestaque/LivrosDestaque"
 import Topicos from "./componentes/Topicos/Topicos"
 import Newsletter from "./componentes/Newsletter/Newsletter"
 import Rodape from "./componentes/Rodape/Rodape"
+import { LivrosProvider } from "./context/LivrosContext"
 
-const livros = [
+const lancamentos = [
   {
     id: 1,
     titulo: 'JavaScript Assertivo',
@@ -43,7 +44,9 @@ function App() {
       <Titulo>
         Últimos lançamentos
       </Titulo>
-      <LivrosDestaque />
+      <LivrosProvider livros={lancamentos}>
+        <LivrosDestaque />
+      </LivrosProvider>
       <Topicos />
       <Newsletter />
       <Rodape />
